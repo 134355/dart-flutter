@@ -1,0 +1,21 @@
+builders:
+  # image_builder:
+  #   import: 'package:yele_app/annotation/image_path.dart'
+  #   builder_factories: ['imagePathBuilder']
+  #   build_extensions: { '.dart': ['.g.dart'] }
+  #   auto_apply: root_package
+  #   build_to: source
+  appRouter_builder:
+    import: 'package:yele_app/annotation/router_test.dart'
+    builder_factories: ['appRouterBuilder']
+    build_extensions: { '.dart': ['.g.dart'] }
+    auto_apply: root_package
+    build_to: source
+  pushRouter_builder:
+    import: 'package:yele_app/annotation/router_test.dart'
+    builder_factories: ['pushRouterBuilder']
+    build_extensions: { '.dart': ['.g.dart'] }
+    runs_before: ["yele_app|appRouter_builder"]
+    auto_apply: root_package
+    build_to: source
+  
